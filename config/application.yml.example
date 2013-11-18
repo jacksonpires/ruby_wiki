@@ -1,6 +1,4 @@
 defaults: &defaults
-  time_zone: 'Brisbane'
-  default_locale: 'en'
 
 development:
   <<: *defaults
