@@ -1,15 +1,16 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update]
+  before_action :set_page, only: [:edit, :update]
 
   def index
     @pages = Page.all
   end
 
   def show
+    @page = Page.where(slug: params[:id]).first_or_initialize(title: params[:id])
   end
 
   def new
-    @page = Page.new
+    @page = Page.new(title: params[:title])
   end
 
   def edit

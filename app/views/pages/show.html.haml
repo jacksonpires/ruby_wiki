@@ -1,12 +1,13 @@
-%p#notice= notice
+- if @page.new_record?
+  %p Create new page "#{link_to @page.title, new_page_path(title: @page.title)}"
+- else
+  %p
+    %b Title:
+    = @page.title
+  %p
+    %b Body:
+    = @page.body
 
-%p
-  %b Title:
-  = @page.title
-%p
-  %b Body:
-  = @page.body
-
-= link_to 'Edit', edit_page_path(@page)
-|
-= link_to 'Back', pages_path
+  = link_to 'Edit', edit_page_path(@page)
+  |
+  = link_to 'Back', pages_path
