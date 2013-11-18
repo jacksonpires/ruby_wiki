@@ -1,9 +1,18 @@
 !!!
-%html
+%html{ lang: 'en' }
   %head
     %title RubyWiki
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    %meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    = stylesheet_link_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
   %body
-    = yield
+    .container
+      = bootstrap_flash
+
+      .row
+        .col-md-3 Sidebar
+        .col-md-9
+          RubyWiki
+          = yield
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

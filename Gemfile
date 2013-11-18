@@ -4,6 +4,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.1'
 
 gem 'coffee-rails', '~> 4.0.0'
+gem 'friendly_id'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'less-rails'
