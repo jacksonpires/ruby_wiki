@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.1'
 
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'friendly_id'
 gem 'haml-rails'
