@@ -86,3 +86,11 @@ FriendlyId.defaults do |config|
   #   end
   # }
 end
+
+module FriendlyId
+  module Slugged
+    def normalize_friendly_id(value)
+      value.to_s.gsub(/[\s\.-]/, '_').parameterize.gsub(/-/, '/')
+    end
+  end
+end

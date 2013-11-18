@@ -5,4 +5,6 @@ RubyWiki::Application.routes.draw do
   root to: 'pages#index'
 
   resources :pages
+
+  get '/pages/:id', to: 'pages#show', constraints: { id: /.+/ }
 end
