@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'less-rails'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
+gem 'settingslogic'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
