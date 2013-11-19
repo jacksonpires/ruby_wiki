@@ -3,17 +3,9 @@
 %table.table.table-striped
   %tr
     %th Title
-    %th Body
-    %th
-    %th
-    %th
 
   - @pages.each do |page|
     %tr
-      .row
-        %td= page.title
-        %td= page.body
-        %td= link_to 'Show', page, class: 'btn btn-primary btn-xs col-md-6'
-        %td= link_to 'Edit', edit_page_path(page), class: 'btn btn-default btn-xs col-md-6'
+      %td= link_to page.title, page
 
 = link_to 'New Page', new_page_path, class: 'btn btn-primary'

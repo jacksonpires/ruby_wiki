@@ -1,5 +1,5 @@
 - if @page.new_record?
-  %p Create new page "#{link_to @page.title, new_page_path(title: @page.title)}"
+  %p= link_to "Create page \"#{@page.title}\"", new_page_path(path: @page.title)
 - else
   %p
     %b Title:

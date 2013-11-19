@@ -1,4 +1,6 @@
-= form_for @page, role: 'form', html: { class: 'form-horizontal' } do |f|
+= form_for @page, url: @page.new_record? ? pages_path : page_path(@page.id), role: 'form',
+  html: { class: 'form-horizontal' } do |f|
+  = f.hidden_field :slug
   .form-group
     = f.label :title, class: 'col-sm-2 control-label'
     .col-sm-5

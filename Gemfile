@@ -22,6 +22,7 @@ end
 
 group :development, :test do
   gem 'pry-meta'
+  gem 'quiet_assets'
 end
 
 group :test do
@@ -29,6 +30,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'forgery'
+  gem 'launchy'
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
