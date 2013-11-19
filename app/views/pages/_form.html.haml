@@ -1,13 +1,17 @@
-= form_for @page, url: @page.new_record? ? pages_path : page_path(@page.id) do |f|
+= form_for @page, url: @page.new_record? ? pages_path : page_path(@page.id), role: 'form',
+  html: { class: 'form-horizontal' } do |f|
   = f.hidden_field :slug
+  .form-group
+    = f.label :title, class: 'col-sm-2 control-label'
+    .col-sm-5
+      = f.text_field :title, class: 'form-control', placeholder: 'Title'
 
-  .field
-    = f.label :title
-    = f.text_field :title
+  .form-group
+    = f.label :body, class: 'col-sm-2 control-label'
+    .col-sm-5
+      = f.text_area :body, class: 'form-control', rows: 3, placeholder: 'Body'
 
-  .field
-    = f.label :body
-    = f.text_area :body
-
-  .actions
-    = f.submit 'Save'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = link_to 'Back', pages_path, class: 'btn btn-default'
+      = f.submit 'Save', class: 'btn btn-primary'
