@@ -7,16 +7,19 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.where(slug: params[:id]).first_or_initialize(title: params[:id])
+    flash.now[:error] = 'This page does not exist yet.' if @page.new_record?
   end
 
   def new
-    @page = Page.new(title: params[:title])
+    title = params[:path].split('/').last.titleize if params[:path]
+    @page = Page.new title: title, slug: params[:path]
   end
 
   def edit
   end
 
   def create
+    params[:page].delete(:slug) if params[:page][:slug].empty?
     @page = Page.new page_params
 
     if @page.save

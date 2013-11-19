@@ -1,4 +1,6 @@
-= form_for @page do |f|
+= form_for @page, url: @page.new_record? ? pages_path : page_path(@page.id) do |f|
+  = f.hidden_field :slug
+
   .field
     = f.label :title
     = f.text_field :title

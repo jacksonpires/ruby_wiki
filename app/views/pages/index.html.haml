@@ -3,16 +3,9 @@
 %table
   %tr
     %th Title
-    %th Body
-    %th
-    %th
-    %th
 
   - @pages.each do |page|
     %tr
-      %td= page.title
-      %td= page.body
-      %td= link_to 'Show', page
-      %td= link_to 'Edit', edit_page_path(page)
+      %td= link_to page.title, page
 
 = link_to 'New Page', new_page_path
