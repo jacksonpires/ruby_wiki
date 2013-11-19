@@ -22,6 +22,7 @@ end
 
 group :development, :test do
   gem 'pry-meta'
+  gem 'quiet_assets'
 end
 
 group :test do
