@@ -1,6 +1,6 @@
 %h1 Listing pages
 
-%table
+%table.table.table-striped
   %tr
     %th Title
     %th Body
@@ -10,9 +10,10 @@
 
   - @pages.each do |page|
     %tr
-      %td= page.title
-      %td= page.body
-      %td= link_to 'Show', page
-      %td= link_to 'Edit', edit_page_path(page)
+      .row
+        %td= page.title
+        %td= page.body
+        %td= link_to 'Show', page, class: 'btn btn-primary btn-xs col-md-6'
+        %td= link_to 'Edit', edit_page_path(page), class: 'btn btn-default btn-xs col-md-6'
 
-= link_to 'New Page', new_page_path
+= link_to 'New Page', new_page_path, class: 'btn btn-primary'
