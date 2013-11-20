@@ -1,11 +1,9 @@
-%h1 Listing pages
-
-%table.table.table-striped
-  %tr
-    %th Title
-
-  - @pages.each do |page|
-    %tr
-      %td= link_to page.title, page
+.panel.panel-default
+  .panel-heading All pages
+  .panel-body
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  %ul.list-group
+    - @pages.each do |page|
+      %li.list-group-item= link_to page.title, page
 
 = link_to 'New Page', new_page_path, class: 'btn btn-primary'

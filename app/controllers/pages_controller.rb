@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:edit, :update]
 
   def index
-    @pages = Page.all
+    @pages = Page.all.order(:slug)
   end
 
   def show
