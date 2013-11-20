@@ -5,7 +5,9 @@ RubyWiki::Application.routes.draw do
   root to: 'pages#index'
 
   resources :pages, expect: [:destroy] do
-    get :versions
+    member do
+      get :versions
+    end
   end
 
   get '/pages/:id/edit',     to: 'pages#edit',     constraints: { id: /.+/ }
