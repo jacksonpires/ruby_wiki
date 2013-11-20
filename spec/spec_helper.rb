@@ -4,11 +4,12 @@ SimpleCov.start 'rails'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
+require 'capybara/poltergeist'
 
-Rails.logger.level = 4 # reduce the IO during tests
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 Dir[Rails.root.join('spec/features/macros/**/*.rb')].each { |f| require f }
 
+Rails.logger.level = 4 # reduce the IO during tests
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|

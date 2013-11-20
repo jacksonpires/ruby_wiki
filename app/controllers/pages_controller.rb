@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:edit, :update]
+  before_action :set_page, only: [:versions, :edit, :update]
 
   def index
     @pages = Page.all.order(:slug)
@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   def show
     @page = Page.where(slug: params[:id]).first_or_initialize(title: params[:id])
     flash.now[:error] = 'This page does not exist yet.' if @page.new_record?
+  end
+
+  def versions
+    @versions = VersionService.new(@page).versions
   end
 
   def new

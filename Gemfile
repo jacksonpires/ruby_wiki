@@ -5,6 +5,7 @@ gem 'rails', '4.0.1'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'paper_trail', '>= 3.0.0.rc2'
 gem 'friendly_id'
 gem 'haml-rails'
 gem 'jquery-rails'
