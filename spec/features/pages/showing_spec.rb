@@ -16,6 +16,7 @@ describe 'Pages showing', type: :feature do
 
       expect(current_path).to eql('/pages/tv_series/homeland')
       expect(page).to have_content(_page.body)
+      expect(page).to have_content("Last edited by #{_page.updated_by}, less than a minute ago")
     end
   end
 
@@ -25,6 +26,7 @@ describe 'Pages showing', type: :feature do
 
       expect(current_path).to eql('/pages/tv_series/homeland')
       expect(page).to have_content(_page.body)
+      expect(page).to have_content("Last edited by #{_page.updated_by}, less than a minute ago")
     end
   end
 end
