@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def versions
-    @versions = VersionService.new(@page).versions
+    @versions = VersionService.new(@page).versions.reverse
   end
 
   def new
