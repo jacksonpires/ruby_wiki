@@ -23,7 +23,7 @@ RUBY_WIKI['pages'] =
     $('#page_body').on 'input propertychange', self.getNewPreview
 
   getNewPreview: ->
-    $.get "/pages/#{$('#page_slug').val()}/preview",
+    $.get '/pages/preview',
       markdown: $('#page_body').val()
     , (response) ->
       $('#currentPreview').html response.html_body
