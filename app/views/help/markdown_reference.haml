@@ -1,0 +1,7 @@
+.well
+  %h1 Markdown reference
+
+- @markdown_reference_list.each do |markdown_reference|
+  .reference_item
+    %h2= markdown_reference.titleize
+    = render "help/markdown_reference/#{markdown_reference}"

@@ -1,3 +1,6 @@
+- content_for :sidebar do
+  = render 'help/markdown_reference_sidebar'
+
 = form_for @page, url: @page.new_record? ? pages_path : page_path(@page.id), role: 'form',
   html: { class: 'form-horizontal' } do |f|
   = f.hidden_field :slug

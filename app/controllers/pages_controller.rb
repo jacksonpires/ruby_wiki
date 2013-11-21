@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:versions, :edit, :update]
+  before_action :prepare_form, only: [:new, :edit]
 
   def index
     @pages = Page.all.order(:slug)
@@ -50,6 +51,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+  def prepare_form
+    @markdown_reference_list = MarkdownReference.all
+  end
 
   def set_page
     @page = Page.friendly.find params[:id]

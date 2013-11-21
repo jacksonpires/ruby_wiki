@@ -1,0 +1,23 @@
+%p You can also add an anchor for an element such as Headers, then you can link to this anchor anywhere, when you click that link in the Preview view, it'll auto scroll to the place of the destination anchor.
+
+%p For example below is a normal h2 Header:
+
+%pre
+  %code
+    :preserve
+      ## This is an example
+
+%p Now we add an anchor for it, here we use the name "anchor1" for the anchor, of course you can use any name you want.
+
+%pre
+  %code
+    :preserve
+      ## [This is an example](id:anchor1)
+
+%p If you want to link to this anchor, simply write like this:
+
+%pre
+  %code
+    :preserve
+      Click this [link](#anchor1) in the Preview view will
+      auto scroll to the place of the destination anchor.

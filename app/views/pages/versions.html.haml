@@ -11,19 +11,19 @@
   - @versions.each do |page|
     %tr
       %td= page['title']
-      %td= link_to 'Open', "##{page['updated_at'].to_i}", class: 'btn btn-small btn-primary', data: { toggle: 'modal' }
+      %td= link_to 'Open', "##{page['updated_at'].to_i}", class: 'btn btn-sm btn-primary', data: { toggle: 'modal' }
       %td= l(page['created_at'], format: :short) if page['created_at']
       %td= l(page['updated_at'], format: :short) if page['updated_at']
       %td= page[:user].email if page[:user]
 
       .modal.fade{ id: page['updated_at'].to_i, 'aria-hidden' => 'true',
-        'aria-labelledby' => "#{page['updated_at'].to_i}_label", role: 'dialog', tabindex: '-1'}
+        'aria-labelledby' => "#{page['updated_at'].to_i}_label", role: 'dialog', tabindex: '-1' }
         .modal-dialog
           .modal-content
             .modal-header
-              %button.close{'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button'} ×
+              %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button' } ×
               %h4.modal-title{ id: "#{page['updated_at'].to_i}_label" }= page['title']
             .modal-body
               = page['body'].presence || '(empty)'
             .modal-footer
-              %button.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} Close
+              %button.btn.btn-default{ 'data-dismiss' => 'modal', type: 'button' } Close

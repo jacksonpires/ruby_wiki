@@ -1,0 +1,23 @@
+%p Inline:
+
+%pre
+  %code
+    :preserve
+      An [example](http://url.com/ "Title")
+
+%p Reference-style labels (titles are optional):
+
+%pre
+  %code
+    :preserve
+      An [example][id]. Then, anywhere
+      else in the doc, define the link:
+
+        [id]: http://example.com/  "Title"
+
+%p Email:
+
+%pre
+  %code
+    :preserve
+      An email <example@example.com> link.

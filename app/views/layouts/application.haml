@@ -23,9 +23,12 @@
               = link_to 'Sign out', destroy_user_session_path, method: :delete
       .row
         .col-md-3
-          %ul
-            %li= link_to 'All pages', pages_path
-            %li= link_to 'Markdown reference', '#'
+          .panel.panel-default
+            .panel-heading Special Pages
+            %ul.list-group
+              %li.list-group-item= link_to 'All pages', pages_path
+
+          = yield :sidebar
         .col-md-9
           = yield
 

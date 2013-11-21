@@ -15,6 +15,12 @@ RubyWiki::Application.routes.draw do
     end
   end
 
+  resources :help, only: :none do
+    collection do
+      get :markdown_reference
+    end
+  end
+
   get '/pages/:id/edit',     to: 'pages#edit',     constraints: { id: /.+/ }
   get '/pages/:id/versions', to: 'pages#versions', constraints: { id: /.+/ }
   get '/pages/:id',          to: 'pages#show',     constraints: { id: /.+/ }

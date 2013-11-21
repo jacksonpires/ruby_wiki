@@ -1,0 +1,21 @@
+.panel.panel-default
+  .panel-heading Markdown Reference
+  %ul.list-group
+    %li.list-group-item
+      %strong= link_to 'Complete list', markdown_reference_help_index_path, target: :blank
+
+    - @markdown_reference_list.each do |markdown_reference|
+      %li.list-group-item= link_to markdown_reference.titleize, "##{markdown_reference}_modal", data: { toggle: 'modal' }
+
+- @markdown_reference_list.each do |markdown_reference|
+  .modal.fade{ id: "#{markdown_reference}_modal", 'aria-hidden' => 'true',
+    'aria-labelledby' => "#{markdown_reference}_label", role: 'dialog', tabindex: '-1' }
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button' } ×
+          %h4.modal-title{ id: "#{markdown_reference}_label" }= markdown_reference.titleize
+        .modal-body
+          = render "help/markdown_reference/#{markdown_reference}"
+        .modal-footer
+          %button.btn.btn-default{ 'data-dismiss' => 'modal', type: 'button' } Close
