@@ -1,0 +1,277 @@
+%h4 Strong and Emphasize
+
+%pre
+  %code
+    :preserve
+      *emphasize*   **strong**
+      _emphasize_   __strong__
+%br
+
+%h4 Links and Email
+
+%p Inline:
+
+%pre
+  %code
+    :preserve
+      An [example](http://url.com/ "Title")
+
+%p Reference-style labels (titles are optional):
+
+%pre
+  %code
+    :preserve
+      An [example][id]. Then, anywhere
+      else in the doc, define the link:
+
+        [id]: http://example.com/  "Title"
+
+%p Email:
+
+%pre
+  %code
+    :preserve
+      An email <example@example.com> link.
+%br
+
+%h4 Images
+
+%p Inline (titles are optional):
+
+%pre
+  %code
+    :preserve
+      ![alt text](/path/img.jpg "Title")
+
+%p Reference-style:
+
+%pre
+  %code
+    :preserve
+      ![alt text][id]
+      [id]: /url/to/img.jpg "Title"
+%br
+
+%h4 Headers
+
+%p Setext-style:
+
+%pre
+  %code
+    :preserve
+      Header 1
+      ========
+
+      Header 2
+      --------
+
+%p atx-style (closing #’s are optional):
+
+%pre
+  %code
+    :preserve
+      # Header 1 #
+
+      ## Header 2 ##
+
+      ###### Header 6
+%br
+
+%h4 Lists
+
+%p Ordered, without paragraphs:
+
+%pre
+  %code
+    :preserve
+      1.  Foo
+      2.  Bar
+
+%p Unordered, with paragraphs:
+
+%pre
+  %code
+    :preserve
+      *   A list item.
+
+          With multiple paragraphs.
+
+      *   Bar
+
+%p You can nest them:
+
+%pre
+  %code
+    :preserve
+      *   Abacus
+          * answer
+      *   Bubbles
+          1.  bunk
+          2.  bupkis
+              * BELITTLER
+          3. burper
+      *   Cunning
+%br
+
+%h4 Blockquotes
+
+%pre
+  %code
+    :preserve
+      > Email-style angle brackets
+      > are used for blockquotes.
+
+      > > And, they can be nested.
+
+      > #### Headers in blockquotes
+      >
+      > * You can quote a list.
+      > * Etc.
+%br
+
+%h4 Inline Code
+
+%pre
+  %code
+    :preserve
+      `&lt;code&gt;` spans are delimited
+      by backticks.
+
+      You can include literal backticks
+      like `` `this` ``.
+%br
+
+%h4 Block Code
+
+%p Indent every line of a code block by at least 4 spaces or 1 tab.
+
+%pre
+  %code
+    :preserve
+      This is a normal paragraph.
+
+          This is a preformatted
+          code block.
+%br
+
+%h4 Horizontal Rules
+
+%p Three or more dashes or asterisks:
+
+%pre
+  %code
+    :preserve
+      ---
+
+      * * *
+
+      - - - -
+%br
+
+%h4 Hard Line Breaks
+
+%p End a line with two or more spaces:
+
+%pre
+  %code
+    :preserve
+      Roses are red,
+      Violets are blue.
+%br
+
+%h4 Footnotes
+
+%p Footnotes work mostly like reference-style links. A footnote is made of two things: a marker in the text that will become a superscript number; a footnote definition that will be placed in a list of footnotes at the end of the document. A footnote looks like this:
+
+%pre
+  %code
+    :preserve
+      That's some text with a footnote.[^1]
+
+      [^1]: And that's the footnote.
+%br
+
+%h4 Strikethrough
+
+%p Wrap with 2 tilde ~ characters:
+
+%pre
+  %code
+    :preserve
+      ~~Strikethrough~~
+%br
+
+%h4 Fenced Code Blocks
+
+%p Start with a line containing 3 or more backtick ` characters, and ends with the first line with the same number of backtick `:
+
+%pre
+  %code
+    :preserve
+      ```
+      Fenced code blocks are like Stardard
+      Markdown’s regular code blocks, except that
+      they’re not indented and instead rely on a
+      start and end fence lines to delimit the code
+      block.
+      ```
+%br
+
+%h4 Tables
+
+%p A simple table looks like this:
+
+%pre
+  %code
+    :preserve
+      First Header | Second Header | Third Header
+      ------------ | ------------- | ------------
+      Content Cell | Content Cell  | Content Cell
+      Content Cell | Content Cell  | Content Cell
+
+%p If you wish, you can add a leading and tailing pipe to each line of the table:
+
+%pre
+  %code
+    :preserve
+      | First Header | Second Header | Third Header |
+      | ------------ | ------------- | ------------ |
+      | Content Cell | Content Cell  | Content Cell |
+      | Content Cell | Content Cell  | Content Cell |
+
+%p Specify alignement for each column by adding colons to separator lines:
+
+%pre
+  %code
+    :preserve
+      First Header | Second Header | Third Header
+      :----------- | :-----------: | -----------:
+      Left         | Center        | Right
+      Left         | Center        | Right
+%br
+
+%h4 Anchor
+
+%p You can also add an anchor for an element such as Headers, then you can link to this anchor anywhere, when you click that link in the Preview view, it'll auto scroll to the place of the destination anchor.
+
+%p For example below is a normal h2 Header:
+
+%pre
+  %code
+    :preserve
+      ## This is an example
+
+%p Now we add an anchor for it, here we use the name "anchor1" for the anchor, of course you can use any name you want.
+
+%pre
+  %code
+    :preserve
+      ## [This is an example](id:anchor1)
+
+%p If you want to link to this anchor, simply write like this:
+
+%pre
+  %code
+    :preserve
+      Click this [link](#anchor1) in the Preview view will
+      auto scroll to the place of the destination anchor.
