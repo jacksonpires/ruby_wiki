@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe 'Pages versions', type: :feature, js: true, versioning: true do
+  before do
+    find_or_create_user
+    authenticate
+  end
+
   it 'shows all the versions of a page' do
     _page = create :page, title: 'Game Thrones', body: 'old body content', slug: 'tv_series/game_of_thrones'
     _page.update(title: 'Game of Thrones', body: 'new body content')

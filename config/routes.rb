@@ -1,8 +1,9 @@
 RubyWiki::Application.routes.draw do
-  devise_for :users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   root to: 'pages#index'
+
+  devise_for :users
+
+  ActiveAdmin.routes(self)
 
   resources :pages, expect: [:destroy] do
     member do

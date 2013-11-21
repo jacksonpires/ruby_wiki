@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe 'Pages showing', type: :feature do
+  before do
+    find_or_create_user
+    authenticate
+  end
+
   let!(:_page) { create :page, title: 'Homeland', slug: 'tv_series/homeland',
     body: "A CIA officer who is put on probation and reassigned to the CIA's Counterterrorism Center." }
 

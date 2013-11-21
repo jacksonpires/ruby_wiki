@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe 'Pages update', type: :feature do
+  before do
+    find_or_create_user
+    authenticate
+  end
+
   let!(:_page) { create :page, title: 'Big Bang', slug: 'tv_series/the_big_bang_theory' }
 
   it 'updates a page' do

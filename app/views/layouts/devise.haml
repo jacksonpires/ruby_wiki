@@ -14,19 +14,6 @@
         .col-md-12
           .well
             %h1 RubyWiki
-            .pull-right
-              = current_user.email
-              |
-              - if current_user.admin?
-                = link_to 'Admin area', admin_dashboard_path
-                |
-              = link_to 'Sign out', destroy_user_session_path, method: :delete
-      .row
-        .col-md-3
-          %ul
-            %li= link_to 'All pages', pages_path
-            %li= link_to 'Markdown reference', '#'
-        .col-md-9
           = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

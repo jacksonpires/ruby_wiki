@@ -15,5 +15,9 @@ module RubyWiki
     config.generators do |g|
       g.test_framework :rspec, fixture: false, views: false
     end
+
+    config.to_prepare do
+      Devise::SessionsController.layout 'devise'
+    end
   end
 end

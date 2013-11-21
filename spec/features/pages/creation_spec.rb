@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe 'Pages creation', type: :feature do
+  before do
+    find_or_create_user
+    authenticate
+  end
+
   it 'creates a new page' do
     visit new_page_path
     fill_in 'Title', with: 'Lost'

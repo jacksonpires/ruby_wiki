@@ -21,6 +21,7 @@ RSpec.configure do |config|
   config.expect_with(:rspec) { |c| c.syntax = :expect }
   config.order = 'random'
 
+  config.include AcceptanceMacros, type: :feature
   config.include FactoryGirl::Syntax::Methods
 
   config.before do
