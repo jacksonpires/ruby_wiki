@@ -7,7 +7,13 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.where(slug: params[:id]).first_or_initialize(title: params[:id])
+    @body = MarkdownParser.new(@page.body).to_html if @page.persisted?
     flash.now[:error] = 'This page does not exist yet.' if @page.new_record?
+  end
+
+  def preview
+    html_body = MarkdownParser.new(params[:markdown]).to_html
+    render json: { html_body: html_body }
   end
 
   def versions

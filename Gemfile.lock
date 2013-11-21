@@ -186,6 +186,7 @@ GEM
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       polyamorous (~> 0.6.0)
+    redcarpet (3.0.0)
     ref (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
@@ -271,6 +272,7 @@ DEPENDENCIES
   pry-meta
   quiet_assets
   rails (= 4.0.1)
+  redcarpet
   rspec-rails
   sass-rails (~> 4.0.0)
   settingslogic

@@ -6,13 +6,17 @@
     = stylesheet_link_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-  %body
+  %body{ data: { controller: controller_name, action: action_name } }
     .container
       = bootstrap_flash
 
       .row
-        .col-md-3 Sidebar
+        .col-md-3
+          %ul
+            %li= link_to 'All pages', pages_path
+            %li= link_to 'Markdown reference', '#'
         .col-md-9
           %h1 RubyWiki
           = yield
+
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

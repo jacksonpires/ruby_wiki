@@ -11,6 +11,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'pg'
+gem 'redcarpet'
 gem 'sass-rails', '~> 4.0.0'
 gem 'settingslogic'
 gem 'therubyracer', platforms: :ruby

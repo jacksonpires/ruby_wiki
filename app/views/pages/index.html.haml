@@ -1,3 +1,9 @@
+.pull-right
+  = link_to 'New Page', new_page_path, class: 'btn btn-primary'
+%br
+%br
+%br
+
 .panel.panel-default
   .panel-heading All pages
   .panel-body
@@ -5,5 +11,3 @@
   %ul.list-group
     - @pages.each do |page|
       %li.list-group-item= link_to page.title, page
-
-= link_to 'New Page', new_page_path, class: 'btn btn-primary'
