@@ -61,6 +61,6 @@ class PagesController < ApplicationController
   end
 
   def page_params
-    params.require(:page).permit(:title, :body, :slug)
+    params.require(:page).permit(:title, :body, :slug).merge(updated_by: current_user)
   end
 end

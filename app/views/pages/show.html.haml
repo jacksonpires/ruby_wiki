@@ -5,6 +5,9 @@
   |
   = link_to 'Versions', versions_page_path(@page)
 
+  %p
+    %em= "Last edited by <strong>#{@page.updated_by}</strong>, #{distance_of_time_in_words_to_now(@page.updated_at)} ago".html_safe
+
   .well
     %h2= @page.title
 
