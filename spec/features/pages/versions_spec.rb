@@ -15,7 +15,7 @@ describe 'Pages versions', type: :feature, js: true, versioning: true do
     expect(page).to have_content('Game Thrones')
     expect(page).to_not have_content('old body conten')
 
-    find("a[href='##{_page.updated_at.to_i}']").click
+    find("a[href='##{_page.updated_at.to_i}_modal']").click
     expect(page).to have_content('old body conten')
   end
 
@@ -25,7 +25,7 @@ describe 'Pages versions', type: :feature, js: true, versioning: true do
 
     visit '/pages/tv_series/game_of_thrones/versions'
 
-    find("a[href='##{_page.updated_at.to_i}']").click
+    find("a[href='##{_page.updated_at.to_i}_modal']").click
     expect(page).to have_content('(empty)')
   end
 end
