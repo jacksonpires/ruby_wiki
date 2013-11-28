@@ -21,7 +21,7 @@
               - if current_user.admin?
                 = link_to 'Admin area', admin_dashboard_path
                 |
-              = link_to 'Sign out', destroy_user_session_path, method: :delete
+              = link_to 'Sign out', destroy_user_session_path
       .row
         .col-md-3
           .panel.panel-default
