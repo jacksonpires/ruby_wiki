@@ -1,3 +1,3 @@
 en:
   active_admin:
-    powered_by: '&copy; RubyWiki'
+    powered_by: "Powered by <a href='https://github.com/lucascaton/ruby_wiki' target='_blank'>RubyWiki</a>"
