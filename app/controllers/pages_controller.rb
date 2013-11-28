@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_action :prepare_form, only: [:new, :edit]
 
   def index
-    if @wiki_detail.initial_page
+    if request.path != '/pages' && @wiki_detail.initial_page
       redirect_to page_path(@wiki_detail.initial_page.slug)
     else
       @pages = Page.all.order(:slug)

@@ -8,28 +8,34 @@
 
   %body{ data: { controller: controller_name, action: action_name } }
     .container
+      %nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+        .navbar-right
+          %p.navbar-text
+            Signed in as
+            %strong= current_user.email
+
+          - if current_user.admin?
+            %p.navbar-text
+              = link_to 'Admin area', admin_dashboard_path
+
+          %p.navbar-text
+            = link_to 'Sign out', destroy_user_session_path
+
       = bootstrap_flash
 
       .row
-        .col-md-12
-          .well
-            = @wiki_detail.logo_or_name
-
-            .pull-right
-              = current_user.email
-              |
-              - if current_user.admin?
-                = link_to 'Admin area', admin_dashboard_path
-                |
-              = link_to 'Sign out', destroy_user_session_path
-      .row
         .col-md-3
+          .panel.panel-default
+            #logo_or_name
+              = @wiki_detail.logo_or_name
+
           .panel.panel-default
             .panel-heading Special Pages
             %ul.list-group
               %li.list-group-item= link_to 'All pages', pages_path
 
           = yield :sidebar
+
         .col-md-9
           = yield
 

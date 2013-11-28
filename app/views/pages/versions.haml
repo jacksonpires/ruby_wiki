@@ -1,0 +1,38 @@
+= render 'breadcrumb', page: @page
+
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        %strong= "#{@page.title} (versions)"
+      .panel-body
+        %table.table
+          %tr
+            %th
+            %th
+            %th Created at
+            %th Updated at
+            %th Updated by
+
+          - @versions.each do |page|
+            %tr
+              %td= page['title']
+              %td= link_to 'Body', "##{page['updated_at'].to_i}_modal", class: 'btn btn-sm btn-primary', data: { toggle: 'modal' }
+              %td= l(page['created_at'], format: :short) if page['created_at']
+              %td= l(page['updated_at'], format: :short) if page['updated_at']
+              %td= page[:user].email if page[:user]
+
+              .modal.fade{ id: "#{page['updated_at'].to_i}_modal", 'aria-hidden' => 'true',
+                'aria-labelledby' => "#{page['updated_at'].to_i}_label", role: 'dialog', tabindex: '-1' }
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button' } ×
+                      %h4.modal-title{ id: "#{page['updated_at'].to_i}_label" }= page['title'] || '(empty)'
+                    .modal-body
+                      = html_body(page['body'])
+                    .modal-footer
+                      %button.btn.btn-default{ 'data-dismiss' => 'modal', type: 'button' } Close
+
+    .pull-right
+      = link_to 'Back', @page, class: 'btn btn-sm btn-default'

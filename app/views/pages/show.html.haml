@@ -1,14 +1,20 @@
 - if @page.new_record?
   %p= link_to "Create page \"#{@page.title}\"", new_page_path(path: @page.title)
 - else
-  = link_to 'Edit', edit_page_path(@page)
-  |
-  = link_to 'Versions', versions_page_path(@page)
+  = render 'breadcrumb', page: @page
 
-  %p
-    %em= "Last edited by <strong>#{@page.updated_by}</strong>, #{distance_of_time_in_words_to_now(@page.updated_at)} ago".html_safe
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading
+          %strong= @page.title
+        .panel-body
+          = @body.html_safe
 
-  .well
-    %h2= @page.title
+      .pull-left
+        = link_to 'Edit', edit_page_path(@page),         class: 'btn btn-sm btn-primary'
+        = link_to 'Versions', versions_page_path(@page), class: 'btn btn-sm btn-default'
 
-  = @body.html_safe
+      .pull-right
+        %p
+          %em= "Last edited by <strong>#{@page.updated_by}</strong>, #{distance_of_time_in_words_to_now(@page.updated_at)} ago".html_safe

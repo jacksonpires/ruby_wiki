@@ -13,7 +13,7 @@
       .row
         .col-md-12
           .well
-            %h1 RubyWiki
+            = @wiki_detail.logo_or_name
           = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
