@@ -3,7 +3,11 @@ class PagesController < ApplicationController
   before_action :prepare_form, only: [:new, :edit]
 
   def index
-    @pages = Page.all.order(:slug)
+    if @wiki_detail.initial_page
+      redirect_to page_path(@wiki_detail.initial_page.slug)
+    else
+      @pages = Page.all.order(:slug)
+    end
   end
 
   def show

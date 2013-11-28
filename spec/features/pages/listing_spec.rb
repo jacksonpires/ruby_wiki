@@ -4,6 +4,7 @@ describe 'Pages listing', type: :feature do
   let!(:pages) { create_list :page, 5 }
 
   before do
+    find_or_create_a_wiki_detail
     find_or_create_user
     authenticate
   end

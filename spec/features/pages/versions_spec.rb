@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'Pages versions', type: :feature, js: true, versioning: true do
   before do
+    find_or_create_a_wiki_detail
     find_or_create_user
     authenticate
   end

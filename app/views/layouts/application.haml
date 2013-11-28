@@ -1,7 +1,7 @@
 !!!
 %html{ lang: 'en' }
   %head
-    %title RubyWiki
+    %title= @wiki_detail.name
     %meta(name='viewport' content='width=device-width, initial-scale=1.0')
     = stylesheet_link_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -13,7 +13,8 @@
       .row
         .col-md-12
           .well
-            %h1 RubyWiki
+            = @wiki_detail.logo_or_name
+
             .pull-right
               = current_user.email
               |

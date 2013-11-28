@@ -13,4 +13,9 @@ FactoryGirl.define do
     password 'secret123'
     password_confirmation 'secret123'
   end
+
+  factory :wiki_detail do
+    name { Forgery::Name.full_name }
+    logo File.new("#{Rails.root}/spec/support/fixtures/rails.png")
+  end
 end

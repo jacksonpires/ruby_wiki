@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe 'Pages layout', type: :feature do
+  before { find_or_create_a_wiki_detail }
+
   context 'when the user is not admin' do
     before do
       find_or_create_user
