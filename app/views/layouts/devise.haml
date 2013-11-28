@@ -3,7 +3,7 @@
   %head
     %title RubyWiki
     %meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    = stylesheet_link_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'devise', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
   %body{ data: { controller: controller_name, action: action_name } }
@@ -11,9 +11,11 @@
       = bootstrap_flash
 
       .row
-        .col-md-12
-          .well
-            = @wiki_detail.logo_or_name
+        .col-md-3
+          .panel.panel-default
+            #logo_or_name
+              = @wiki_detail.logo_or_name
+        .col-md-9
           = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
