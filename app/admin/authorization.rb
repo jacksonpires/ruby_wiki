@@ -1,4 +1,4 @@
-class AdminAuthorization < ActiveAdmin::AuthorizationAdapter
+class Admin::Authorization < ActiveAdmin::AuthorizationAdapter
   def authorized?(action, subject = nil)
     case action
       when :create  then can_manage_wiki_detail?(subject)
