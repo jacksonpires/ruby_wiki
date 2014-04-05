@@ -1,5 +1,5 @@
 ActiveAdmin.register WikiDetail do
-  actions :all, :except => [:new]
+  actions :all, except: [:new, :destroy]
 
   controller do
     def permitted_params
